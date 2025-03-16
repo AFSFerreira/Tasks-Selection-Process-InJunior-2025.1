@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".\style.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Médias das Notas dos Alunos</h1>
+        <div class="calculator-box">
+            <div class="grades-input-box">
+                <label for="student-grade-input">Nota:</label>
+                <input type="text" name="student-grade-input" id="student-grade-input">
+                <button type="button" id="add-grade-button">Adicionar</button>
+            </div>
+            <div class="grades-display-box">
+                <textarea class="grades-display-area" id="grades-display-area"></textarea>
+                <button type="button" id="evaluate-mean">Calcular Média</button>
+            </div>
+            <p id="mean-result-field">A Média é:</p>
+        </div>
+    </div>
+    <script src=".\scripts.js"></script>
+</body>
+</html>
