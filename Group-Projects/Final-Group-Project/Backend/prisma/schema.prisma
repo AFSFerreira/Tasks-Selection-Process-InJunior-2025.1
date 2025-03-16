@@ -1,0 +1,136 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum PaymentMethod {
+  CREDIT_CARD
+  PIX
+}
+
+enum PajamaSizes {
+  PP
+  P
+  M
+  G
+  GG
+}
+
+enum PajamaGender {
+  MALE
+  FEMALE
+  UNISEX
+  FAMILY
+}
+
+enum PajamaSeason {
+  SUMMER
+  WINTER
+}
+
+enum PajamaType {
+  ADULT
+  CHILD
+}
+
+model User {
+  id       String @id @default(uuid())
+  name     String
+  email    String @unique
+  password String
+
+  @@map("users")
+}
+
+model SalePajama {
+  id       String  @id @default(uuid())
+  saleId   String?
+  pajamaId String?
+
+  quantity Int
+  price    Float
+
+  // Registros são persistidos mesmo se as instâncias refenciadas nas demais
+  // tabelas forem removidas para armazenar o histórico de vendas consistentemente:
+  sale   Sale?   @relation(fields: [saleId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  pajama Pajama? @relation(fields: [pajamaId], references: [id], onDelete: SetNull, onUpdate: Cascade)
+
+  @@map("sales_pajamas")
+}
+
+model Sale {
+  id            String        @id @default(uuid())
+  buyerName     String
+  cpf           String
+  price         Float
+  paymentMethod PaymentMethod
+  installments  Int           @default(1)
+  cardNumber    String?
+
+  salePajamas SalePajama[]
+
+  addressId String
+  address   Address @relation(fields: [addressId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  @@map("sales")
+}
+
+model Address {
+  id           String @id @default(uuid())
+  zipCode      String
+  state        String
+  city         String
+  neighborhood String
+  address      String
+  number       String
+
+  sales Sale[]
+
+  // Criando uma restrição de unicidade para reforçar a relação N:1 de Sale para Address:
+  @@unique([zipCode, state, city, neighborhood, address, number])
+  @@map("address")
+}
+
+model PajamaSize {
+  id            String      @id @default(uuid())
+  stockQuantity Int         @default(0)
+  size          PajamaSizes
+
+  pajamaId String
+  pajama   Pajama @relation(fields: [pajamaId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  @@unique([pajamaId, size])
+  @@map("pajama_sizes")
+}
+
+model Pajama {
+  id          String       @id @default(uuid())
+  name        String
+  description String
+  image       String
+  season      PajamaSeason
+  type        PajamaType
+  gender      PajamaGender
+  favorite    Boolean
+  onSale      Boolean
+  price       Float
+  salePercent Float?
+
+  sizes       PajamaSize[]
+  salePajamas SalePajama[]
+
+  @@map("pajamas")
+}
+
+model Feedback {
+  id          String @id @default(uuid())
+  name        String
+  description String
+  rating      Float
+
+  @@map("feedback")
+}

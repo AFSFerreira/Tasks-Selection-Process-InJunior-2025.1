@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Fira+Code:wght@300..700&family=Gloria+Hallelujah&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IM+Fell+English+SC&family=Merriweather&family=Pacifico&family=Permanent+Marker&family=Poppins&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href=".\css\styles.css"/>
+    <title>Allber</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" class="header-link">Início</a></li>
+                <li><a href="#" class="header-link">Contato</a></li>
+                <li><a href="#" class="header-link">Sobre</a></li>
+            </ul>
+        </nav>
+        
+        <!-- HAMBURGUER MENU -->
+        
+        <label class="toggle-btn">
+            <input type="checkbox" class="switcher"/>
+            <div class="hamburguer-lines-container">
+                <div class="hamburguer-line"></div>
+                <div class="hamburguer-line"></div>
+                <div class="hamburguer-line"></div>
+                <div class="hamburguer-line"></div>
+            </div>
+            <div class="dropdown-menu">
+                <nav>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Sobre</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </label>
+        
+        <h1>ALLBER</h1>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <div class="profile-picture-container">
+                <div class="inner-profile-picture-container">
+                    <img src="./assets/foto-allber.png" class="back-profile-picture"/>
+                    <img src="./assets/Killua.png" class="front-profile-picture"/>
+                </div>
+            </div>
+            <div class="about-text">
+                <h2>APRESENTAÇÃO</h2>
+                <p>
+                    Opa, tudo bem? Meu nome é Allber Fellype, muito prazer em conhecê-lo(a).
+                    Possuo atualmente 20 anos de idade, sou um estudante de Ciência da Computação no quarto período
+                    na Universidade Federal Fluminense! Adicionalmente,sou entusiasta desde jovem pela matemática e um
+                    apreciador de quebra-cabeças no geral. Atualmente, estou participando do processo seletivo da INJunior
+                    e espero futuramente ser capaz de trabalhar com todos vocês!!!
+                </p>
+            </div>
+        </section>
+
+        <section class="informations-section">
+            <div class="hobbies-container">
+                <h3>Hobbies</h3>
+                <ul>
+                    <li>Passear</li>
+                    <li>Solucionar Enigmas</li>
+                    <li>Programar</li>
+                    <li>Jogar</li>
+                    <li>Leitura</li>
+                </ul>
+            </div>
+            <div class="topics-container">
+                <h3>Tópicos</h3>
+                <ol>
+                    <li>
+                        <div class="topics-label">1</div>
+                        Matemática
+                    </li>
+                    <li>
+                        <div class="topics-label">2</div>
+                        Animes
+                    </li>
+                    <li>
+                        <div class="topics-label">3</div>
+                        Música
+                    </li>
+                    <li>Pets</li>
+                    <li>Comidas Favoritas</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="feedback-section">
+            <h2>Feedback</h2>
+            <form>
+                <textarea placeholder="Dê um feedback para esse desenvolvedor!"></textarea>
+                <input type="text" placeholder="Digite seu nome aqui"/>
+                <input type="submit"/>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#instagram">
+                        <img src=".\assets\InstagramIcon.png" class="icon-img" alt="Instagram Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/allber-fellype-2a062b2b9">
+                        <img src=".\assets\LinkedInIcon.png" class="icon-img" alt="Linkedin Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src=".\assets\FacebookIcon.png" class="icon-img" alt="Facebook Icon">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/JamesStewart-314/">
+                        <img src=".\assets\GitlabIcon.png" class="icon-img" alt="Gitlab Icon">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <button>Entrar em Contato</button>
+    </footer>
+</body>
+</html>
