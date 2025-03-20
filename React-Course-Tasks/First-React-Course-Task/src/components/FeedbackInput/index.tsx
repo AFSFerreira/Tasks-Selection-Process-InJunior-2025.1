@@ -28,7 +28,6 @@ export default function FeedbackInput() {
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>('');
   const [hideOnce, setHideOnce] = useState<boolean>(true);
-  const [onHoverButton, setOnHoverButton] = useState<boolean>(false);
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -41,14 +40,6 @@ export default function FeedbackInput() {
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputValue(event.target.value);
-  }
-
-  const handleMouseOver = () => {
-    setOnHoverButton(true);
-  }
-
-  const handleMouseOut = () => {
-    setOnHoverButton(false);
   }
 
   const onSubmit: SubmitHandler<FeedbackFormType> = (data: { 'comment-content': string }) => {
@@ -84,8 +75,6 @@ export default function FeedbackInput() {
           <button
             className={`${shouldShowButton ? styles['show-button'] : styles['hide-button']} ${isSubmitDisabled && styles['disabled-submit']}`}
             type="submit"
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
             style={hideOnce ? {
               display: 'none'
             } : {}}
