@@ -92,7 +92,6 @@
     transform: translateX(-50%);
 
     &:hover {
-        transform-origin: center center;
         animation: customProfilePicAnim .5s ease-in-out forwards !important;
     }
 }
