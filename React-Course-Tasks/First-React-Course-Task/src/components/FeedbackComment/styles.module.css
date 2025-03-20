@@ -1,0 +1,105 @@
+.comment-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-feedback-profile-pic {
+    border: none;
+    width: 5%;
+    max-width: 150px;
+    align-self: flex-start;
+}
+
+.comment-info-box {
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 11px;
+}
+
+.comment-content-box {
+    width: 100%;
+    padding: 11px 30px 20px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--blue-2);
+}
+
+.comment-content-box > div:first-child {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.comment-content-box > div:first-child > p {
+    margin-top: 30px;
+}
+
+.comment-header-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.comment-header-box > h4 {
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.comment-header-box > p {
+    color: var(--gray-1);
+    font-weight: 600;
+}
+
+.trash-icon {
+    height: 100%;
+    margin-top: 25px;
+    margin-left: 50px;
+}
+
+.trash-icon > div > svg {
+    width: clamp(30px, 3.5dvh, 40px);
+    height: clamp(30px, 3.5dvh, 40px);
+    cursor: pointer;
+
+    &:hover {
+        animation: 0.2s ease-in-out trashAnim;
+    }
+}
+
+.comment-like-icon {
+    padding-left: 5px;
+}
+
+@keyframes trashAnim {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    25% {
+        transform: rotate(-20deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}

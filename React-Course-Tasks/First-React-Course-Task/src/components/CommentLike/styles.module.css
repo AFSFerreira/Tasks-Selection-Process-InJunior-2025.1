@@ -1,0 +1,39 @@
+.like-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+    
+    transition: color 0.2s ease-in-out;
+}
+
+.like-box > p,
+.like-box > img {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.liked {
+    color: var(--blue-5);
+}
+
+.liked-icon-anim {
+    animation: 0.6s cubic-bezier(0.075, 0.1, 0.165, 1) likedAnim;
+}
+
+@keyframes likedAnim {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    
+    50% {
+        transform: rotate(-20deg) scale(1.2);
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}

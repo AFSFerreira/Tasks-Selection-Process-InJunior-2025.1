@@ -1,0 +1,32 @@
+
+.profile-cards-container,
+.users-posts-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.profile-cards-container {
+    min-width: clamp(300px, 20dvw, 800px);
+}
+
+@media screen and (max-width: 2000px) {
+
+    .profile-cards-container,
+    .users-posts-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-cards-container {
+        flex-direction: row;
+    }
+
+    .profile-cards-container {
+        height: 50%;
+    }
+}
