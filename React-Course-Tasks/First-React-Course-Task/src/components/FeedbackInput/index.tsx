@@ -62,7 +62,7 @@ export default function FeedbackInput() {
     setInputValue('');
   }
 
-  const shouldShowButton = isFocused || onHoverButton || inputValue !== '';
+  const shouldShowButton = isFocused || inputValue !== '';
   const isSubmitDisabled = inputValue === '';
 
   return (

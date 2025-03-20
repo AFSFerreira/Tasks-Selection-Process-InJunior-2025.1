@@ -11,6 +11,8 @@
     justify-content: flex-end;
     align-items: center;
 
+    transition: all 1s ease-in-out;
+
     &::before {
         content: '';
         position: absolute;
@@ -25,6 +27,12 @@
         background-repeat: no-repeat;
         background-clip: border-box;
         filter: contrast(150%);
+
+        transition: all 1s ease-in-out;
+    }
+
+    &:hover::before {
+        filter: blur(3px) contrast(150%);
     }
 }
 

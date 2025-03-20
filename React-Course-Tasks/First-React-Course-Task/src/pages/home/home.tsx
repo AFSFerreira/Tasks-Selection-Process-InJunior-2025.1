@@ -23,7 +23,7 @@ const loggedUser: User = {
 
 const dummyUser: User = {
   id: uuidv4(),
-  name: "Su5Hi",
+  name: "Su5HI",
   profileImage: dummyProfilePic,
   role: "Artist/Veterinary",
   coverImage: dummyUserCoverImage
