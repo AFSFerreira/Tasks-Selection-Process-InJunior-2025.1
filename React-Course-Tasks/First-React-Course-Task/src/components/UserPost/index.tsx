@@ -64,7 +64,7 @@ export default function UserPost(props: UserPostProps) {
               id={uuidv4()}
               likes={Math.floor(Math.random() * 8)}
             description="Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat.Esse aliqua anim duis ut nostrud voluptate fugiat."
-              postingTime={generateRandomPostTime(5, 12)}
+              postingTime={generateRandomPostTime(1, 10)}
               user={dummyUser1}
             />
 
@@ -72,7 +72,7 @@ export default function UserPost(props: UserPostProps) {
               id={uuidv4()}
               likes={Math.floor(Math.random() * 8)}
               description="Esse aliqua anim duis ut nostrud voluptate fugiat."
-              postingTime={generateRandomPostTime(5, 12)}
+              postingTime={generateRandomPostTime(1, 10)}
               user={dummyUser2}
             />
 
