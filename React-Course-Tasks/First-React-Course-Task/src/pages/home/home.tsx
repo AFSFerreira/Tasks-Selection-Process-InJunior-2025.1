@@ -55,9 +55,9 @@ export default function InFeed() {
 
       <main>
         <div className={styles['profile-cards-container']}>
-          {user && <ProfileCard
+          <ProfileCard
             user={user}
-          />}
+          />
           
           <ProfileCard
             user={dummyUser}
