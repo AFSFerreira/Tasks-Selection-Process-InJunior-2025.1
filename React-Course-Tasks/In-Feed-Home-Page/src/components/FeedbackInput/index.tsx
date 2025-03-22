@@ -12,6 +12,15 @@ export default function FeedbackInput() {
   const userContext = useContext<UserContextType | null>(UserContext);
   const feedbacksContext = useContext<FeedbacksContextType | null>(FeedbackContext);
   
+  const { register, handleSubmit } = useForm<FeedbackFormType>();
+  
+  const [isFocused, setIsFocused] = useState<boolean>(false);
+  const [inputValue, setInputValue] = useState<string>('');
+  const [hideOnce, setHideOnce] = useState<boolean>(true);
+  
+  const { addFeedback } = feedbacksContext;
+  const { user } = userContext;
+
   if (!userContext) {
     return (<p>Error while loading user</p>);
   }
@@ -19,15 +28,6 @@ export default function FeedbackInput() {
   if (!feedbacksContext) {
     return (<p>Error while loading feedbacks</p>);
   }
-
-  const { addFeedback } = feedbacksContext;
-  const { user } = userContext;
-
-  const { register, handleSubmit } = useForm<FeedbackFormType>();
-  
-  const [isFocused, setIsFocused] = useState<boolean>(false);
-  const [inputValue, setInputValue] = useState<string>('');
-  const [hideOnce, setHideOnce] = useState<boolean>(true);
 
   const handleFocus = () => {
     setIsFocused(true);

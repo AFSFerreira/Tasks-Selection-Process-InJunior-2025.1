@@ -2,14 +2,6 @@ import styles from './styles.module.css';
 import SVGLogo from '/Logo-in.svg';
 
 export function Header() {
-
-  // const postContext = useContext(PostContext);
-  
-    
-  // const { posts } = postContext;
-
-  // console.log(posts);
-
   return (
     <>
       <header className={styles['header-container']}>
