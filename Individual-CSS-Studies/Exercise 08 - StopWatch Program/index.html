@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        :root {
+            --timer-pointer-padding: 10px;
+            --timer-pointer-angle: 0deg;
+        }
+
+        @property --timer-pointer-angle {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        #timer {
+            color: #39FF14;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 3rem;
+        }
+
+        .stopwatch-container {
+            width: 100vw;
+            height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: #000;
+        }
+
+        .stopwatch-btn {
+            width: 7rem;
+            height: auto;
+
+            padding: 10px;
+            border: none;
+
+            text-transform: uppercase;
+
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+
+            color: #000;
+            font-size: 1.3rem;
+            border-radius: 5px;
+
+            background-image: none;
+
+            transition-property: box-shadow, background-image;
+            transition-duration: .1s;
+            transition-timing-function: ease;
+
+            cursor: pointer;
+        }
+
+        .stopwatch-btn:hover {
+            box-shadow: inset 5px 5px 5px rgba(0, 0, 0, .5),
+                        inset -5px -5px 5px rgba(255, 255, 255, .5);
+            background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+        }
+
+        /* Start Button: */
+        .stopwatch-btn:nth-of-type(1) {
+            background-color: yellow;
+        }
+
+        /* Stop Button: */
+        .stopwatch-btn:nth-of-type(2) {
+            background-color: red;
+        }
+
+        /* Reset Button: */
+        .stopwatch-btn:nth-of-type(3) {
+            background-color: blue;
+        }
+
+        /* Box Containing the Buttons: */
+        #buttons-box {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            gap: 2%;
+        }
+
+        .outer-border-radius {
+            width: 30rem;
+            position: relative;
+
+            transform-style: preserve-3d;
+
+            background-color: #39FF14;
+            border: 10px solid #39FF14;
+            border-radius: 10px;
+            /* translate: 0 -60%; */
+        }
+
+        #watch-box {
+            padding: 2rem;
+
+            border: 5px solid #39FF14;
+            border-radius: 10px;
+
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            background-color: #000;
+        }
+
+        .outer-border-radius::before, .outer-border-radius::after {
+            content: '';
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            
+            transform: translateZ(-1px);
+
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+            background: conic-gradient(from var(--timer-pointer-angle), transparent, blue, transparent 50%, red, transparent);
+            padding: var(--timer-pointer-padding);
+            border-radius: 10px;
+
+            animation: timer-animation 10s linear infinite;
+        }
+
+        .outer-border-radius::after {
+            filter: blur(5rem);
+        }
+
+        @keyframes timer-animation {
+            from {
+                --timer-pointer-angle: 0deg;
+            }
+            to {
+                --timer-pointer-angle: 360deg;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <main class="stopwatch-container">
+        <div class="outer-border-radius">
+            <div id="watch-box">
+                <span id="timer">00:00:00:00</span>
+            
+                <div id="buttons-box">
+                    <button class="stopwatch-btn" onclick="startTimer()" id="start-btn">Start</button>
+                    <button class="stopwatch-btn" onclick="stopTimer()">Stop</button>
+                    <button class="stopwatch-btn" onclick="resetTimer()">Reset</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let currentTime;
+        let initialTime;
+        let timerLoopInterval;
+        let timerRunning = false;
+
+        let accumulatedTime = 0;
+
+        const timerContent = document.querySelector('#timer');
+
+        function updateTimer() {
+            currentTime = new Date();
+
+            const timeElapsed = currentTime - initialTime + accumulatedTime;
+
+            let hours = Math.floor(timeElapsed / 3600000);
+            let minutes = Math.floor((timeElapsed - hours * 3600000) / 60000);
+            let seconds = Math.floor((timeElapsed - hours * 3600000 - minutes * 60000) / 1000);
+            let milliseconds = Math.floor((timeElapsed - hours * 3600000 - minutes * 60000 - seconds * 1000) / 10);
+
+            hours = hours.toString().padStart(2, 0);
+            minutes = minutes.toString().padStart(2, 0);
+            seconds = seconds.toString().padStart(2, 0);
+            milliseconds = milliseconds.toString().padStart(2, 0);
+
+            timerContent.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+
+            return;
+        }
+
+        function startTimer() {
+            if (timerRunning) return;
+
+            initialTime = new Date();
+            timerLoopInterval = setInterval(updateTimer, 10);
+            timerRunning = true;
+
+            return;
+        }
+
+        function stopTimer() {
+            if (!timerRunning) return;
+            // Stopping Timer:
+            clearInterval(timerLoopInterval);
+            accumulatedTime += new Date() - initialTime;
+            timerRunning = false;
+
+            return;
+        }
+
+        function resetTimer() {
+            // Stopping Timer:
+            clearInterval(timerLoopInterval);
+
+            accumulatedTime = 0;
+            timerContent.textContent = `00:00:00:00`;
+            timerRunning = false;
+
+            return;
+        }
+    </script>
+</body>
+</html>

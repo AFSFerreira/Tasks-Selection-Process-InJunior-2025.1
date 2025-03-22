@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fishy Formulary</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="icon" href="images/Fish-Icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <!-- Bubbles Header -->
+    <div class="header"></div>
+
+    <!-- Main Page Body -->
+    <div class="container center-div">
+
+        <!-- Login Bar -->
+        <div class="from-header">
+            <div class="sign-in underline-login">Sign up</div>
+            <a href="index-2.html" target="_self">
+                <div class="sign-up">Sign in</div>
+            </a>
+        </div>
+
+        <!-- Main Title -->
+        <div class="title-container">
+            <h1>Welcome, new Fishie !</h1>
+            <img src="images/line-wave.gif" alt="a simple wave in line format" id="wave-img">
+        </div>
+
+        <!-- Formulary Section -->
+        <form action="nullfile.php" method="get" class="register-container">
+            <h3>Fill in as many fields below as you can to register your new profile:</h3>
+
+            <div class="input-field">
+                <h3>Username: *</h3>
+                <input type="text" name="nickname" placeholder="This name will be visible to others!" minlength="5" maxlength="30" required>
+            </div>
+
+            <div class="input-field">
+                <h3>Email: *</h3>
+                <input type="email" name="email" placeholder="Put your best email here" required>
+            </div>
+
+            <div class="input-field">
+                <h3>Password: *</h3>
+                <input type="password" name="pass" placeholder="Choose a strong password!" required>
+            </div>
+
+            <div class="input-field">
+                <h3>Number: *</h3>
+                <input type="number" name="number" placeholder="Do you know your phone number by heart?" required>
+            </div>
+
+            <div class="input-field">
+                <h3 id="biography-h3">Biography Description:</h3>
+                <textarea name="biography-description" placeholder="Tell us about yourself..."></textarea>
+            </div>
+
+            <div class="input-field inline-block">
+                <h3>Wanna Adopt an Fish? *</h3>
+            </div>
+            <div class="option-select inline-block">
+                <select name="fish-question" placeholder="Tell us about yourself..." required>
+                    <option value="select-placeholder" selected="selected">Think Carefully!</option>
+                    <option value="1">For Sure!</option>
+                    <option value="0">Maybe Next Time...</option>
+                </select>
+            </div>
+
+            <div class="input-field birth-date-container">
+                <h3 class="inline-block">Birth Date: *</h3>
+                <input type="date" name="birth-date" id="birth-date-calendar" class="inline-block">
+            </div>
+
+            <div class="water-type">
+                <h3>Do you want a fish of what type of water?</h3>
+                <div class="radio-margin inline-block">
+                    <input type="radio" name="water-type" value="freshwater">
+                    <label for="water-type">Freshwater</label>
+                </div>
+
+                <div class="radio-margin inline-block">
+                    <input type="radio" name="water-type" value="saltwater">
+                    <label for="water-type">Saltwater</label>
+                </div>
+            </div>
+
+            <h2 id="optionals-h2">Optionals</h2>
+            
+            <div class="optionals-container inline-block">
+                <ul>
+                    <li>
+                        <input type="checkbox" value="optional-aquarium" name="optional[]">
+                        <label for="optional-aquarium">Aquarium</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="water-pump" name="optional[]">
+                        <label for="optional-water-pump">Water Pump</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="fish-food" name="optional[]">
+                        <label for="optional-fish-food">Fish Food</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="optionals-container inline-block">
+                <ul>
+                    <li>
+                        <input type="checkbox" value="optional-anti-chlorine-substance" name="optional[]">
+                        <label for="optional-anti-chlorine-substance">Anti-Chlorine Substance</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="optional-aquarium-heater" name="optional[]">
+                        <label for="optional-aquarium-heater">Aquarium Heater</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" value="optionals-ornaments" name="optional[]">
+                        <label for="optional-aquary-ornaments">Aquary Ornaments</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="input-field">
+                <h3 class="inline-block">Profile Picture: *</h3>
+                <label class="profile-picture-input">
+                    <input type="file" multiple accept="images/png, images/jpg" required>
+                    Upload your Profile Picture Here!
+                </label>
+            </div>
+
+            <div class="submit-button">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

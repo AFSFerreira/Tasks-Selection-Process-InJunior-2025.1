@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+:root {
+    --seconds-pointer-angle: 0deg;
+}
+
+@property --border-dots-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+.clock-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("img/night.gif");
+    backdrop-filter: blur(200px);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.clock-box {
+    width: max(300px, 30vmax);
+    height: max(300px, 30vmax);
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform-style: preserve-3d;
+
+    background: linear-gradient(to top right, #150c25, #673ab7);
+    box-shadow: 0 0 20px 4px black inset;
+    border-radius: 50%;
+
+    transition: box-shadow 1s ease-in-out;
+}
+
+.clock-box::before, .clock-box::after {    
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    transform: translateZ(-1px);
+
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+
+    border-radius: 50%;
+    background-image: conic-gradient(from var(--seconds-pointer-angle), transparent 20%, 
+                                   #0000FF, purple 70%, red 90%);
+
+    transition: background-image 0.1s linear;
+}
+
+.clock-box::before {
+    filter: blur(1.5rem);
+    opacity: .9;
+}
+
+.clock-box:hover {
+    box-shadow: inset -5px -5px 40px -10px #000,
+                inset 20px 20px 40px -40px #BAC3E3,
+                0px 0px 40px #000;
+}
+
+.clock-box span {
+    font-size: max(2rem, 4vmax);
+    font-family: monospace;
+    font-weight: bold;
+    text-align: center;
+
+    /* ease-in-out smoother than linear...? */
+
+    animation: digital-anim 2s ease-in-out infinite;
+}
+
+#seconds-dotts {
+    width: 92%;
+    height: 92%;
+    position: absolute;
+
+    transform: var(--border-dots-angle);
+
+    border-radius: 50%;
+
+    border: 10px dashed red;
+
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    background-color: transparent;
+    animation: border-dashed-anim 10s ease-in-out infinite;
+}
+
+@keyframes digital-anim {
+    0% {
+        background: linear-gradient(to right, blue, #673ab7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    33% {
+        text-shadow: 1px 1px 1px red;
+    }
+    66% {
+        text-shadow: 1px 1px 1px yellow;
+    }
+    100% {
+        background: linear-gradient(to right, blue, #673ab7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+    }
+}
+
+@keyframes border-dashed-anim {
+    0% {
+    transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(36deg);
+    }
+    20% {
+        transform: rotate(72deg);
+    }
+    30% {
+        transform: rotate(108deg);
+    }
+    40% {
+        transform: rotate(144deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    60% {
+        transform: rotate(216deg);
+    }
+    70% {
+        transform: rotate(252deg);
+    }
+    80% {
+        transform: rotate(288deg);
+    }
+    90% {
+        transform: rotate(324deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

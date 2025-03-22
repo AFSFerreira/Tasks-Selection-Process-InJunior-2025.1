@@ -1,0 +1,239 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --appearAnimDuration: 1s;
+    --card-height-anim-duration: 3s;
+    --linear-gradient-degree: 45deg;
+    --weather-info-container-height: 77vh;
+    --weather-submit-btn-color: #00C000;
+    --standard-body-background-color: #FFFF00;
+    --hot-body-background-color: #FFFF00;
+    --cold-body-background-color: #0000FF;
+}
+
+@property --linear-gradient-degree {
+    syntax: "<angle>";
+    initial-value: 45deg;
+    inherits: false;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(var(--linear-gradient-degree), #DDD 60%, var(--standard-body-background-color));
+    animation: backgroundGradientAnim 5s linear infinite;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+
+.weatherForm {
+    width: 100%;
+    height: 7vh;
+
+    margin-top: 10px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.weatherForm > input[type="text"] {
+    width: 40%;
+    height: 100%;
+    text-indent: 10px;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.weatherForm > button {
+    background-color: var(--weather-submit-btn-color);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    height: 100%;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid transparent;
+    cursor: pointer;
+
+    transition: all .5s ease-in-out;
+}
+
+.weatherForm > button:hover {
+    background-color: #FFF;
+    color: var(--weather-submit-btn-color);
+    border: 3px solid var(--weather-submit-btn-color);
+}
+
+.weather-itens-box {
+    width: 100%;
+    height: 93vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 15vmax;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    translate: 0 -30%;
+    left: 27%;
+}
+
+.weather-info-container {
+    width: 30%;
+    /* Initial Height */
+    height: 0%;
+    opacity: 0;
+    overflow-y: hidden;
+    margin-bottom: 2rem;
+    position: absolute;
+    border: 4px solid #AAA;
+    backdrop-filter: blur(5px);
+    top: 0;
+    border-radius: 20px;
+    background: linear-gradient(to top, rgba(235, 235, 5, .8), 
+              rgba(252, 103, 1, .5), rgba(180, 1, 7, 0.5));
+    z-index: 1;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vmin;
+    box-shadow: 7px 7px 20px 1px #000;
+}
+
+.weather-data {
+    text-align: center;
+    background: linear-gradient(to right, #CCC, #FFF, #CCC);
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+}
+
+.weather-info-container p:nth-child(1) {
+    margin-top: 1rem;
+    font-size: 4vmax;
+}
+
+.weather-info-container p:nth-child(2) {
+    font-size: 3vmax;
+}
+
+.weather-info-container p:nth-child(3) {
+    font-size: 2vmax;
+}
+
+.weather-info-container p:nth-child(4) {
+    font-size: 3vmax;
+}
+
+.weather-info-container p:nth-child(5) {
+    color: black;
+    font-size: 6.5vmax;
+    margin-bottom: 1rem;
+}
+
+.hidden-element {
+    animation: dissapearAnim var(--appearAnimDuration) ease-in-out 1 forwards;
+}
+
+.visible-element {
+    animation: appearAnim var(--appearAnimDuration) ease-in-out 1 forwards;
+}
+
+.card-height-open-animation {
+    opacity: 1;
+    animation: heightGrowAnim var(--card-height-anim-duration) ease-in-out 1 forwards;
+}
+
+.card-height-close-animation {
+    opacity: 1;;
+    animation: heightCollapseAnim 5s ease-in-out 1 forwards;
+}
+
+.sunIconAnimation {
+    animation: sunIconAnimation 10s linear infinite;
+    animation-fill-mode: forwards;
+}
+
+.upDownAnim {
+    animation: upDown 1.5s alternate infinite ease-in-out;
+    opacity: 1;
+}
+
+/* Keyframes Animations */
+@keyframes sunIconAnimation {
+    from {  
+        rotate: 0deg;
+        opacity: 1;
+    }
+    to { 
+        rotate: 360deg;
+        opacity: 1;
+    }
+}
+
+@keyframes backgroundGradientAnim {
+    0% { --linear-gradient-degree: 45deg; }
+    25% { --linear-gradient-degree: 25deg; }
+    50% { --linear-gradient-degree: 45deg; }
+    75% { --linear-gradient-degree: 70deg; }
+    100% { --linear-gradient-degree: 45deg; }
+}
+
+@keyframes heightGrowAnim {
+    from { height: 0px; }
+    to { height: var(--weather-info-container-height); }
+}
+
+@keyframes heightCollapseAnim {
+    from { height: var(--weather-info-container-height); }
+    to { height: 0%; }
+}
+
+@keyframes appearAnim {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes dissapearAnim {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes upDown {
+  to { transform: translatey(10px); }
+}

@@ -1,0 +1,184 @@
+html {
+    font-family: Helvetica;
+    user-select: none;
+}
+
+body {
+    background-image: url("../img/mathBackground.gif");
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+
+    font-size: 3em;
+}
+
+h2 {
+    text-align: left;
+    font-weight: bold;
+
+    font-size: 2em;
+}
+
+h3 {
+    text-align: center;
+    font-style: italic;
+    font-weight: normal;
+
+    font-size: 1.5em;
+}
+
+li {
+    margin: 1em 0em;
+}
+
+#gaussImg-1 {
+    width: 50em;
+    border-top-right-radius: 10%;
+    border-top-left-radius: .5em;
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em;
+}
+
+#firstImageParagraph {
+    text-align: center;
+    border-top: none;
+
+    padding-bottom: 5em;
+
+    margin-left: 40em;
+    margin-right: 40em;
+        
+    margin-left: 10em;
+    margin-right: 10em;
+}
+
+.container {
+    width: 90%;
+    height: 90%;
+    background-color: rgba(255, 255, 255, 0.7);
+    
+    border: .1em solid black;
+    border-color: black;
+
+    overflow: auto;
+
+    margin-top: 2.5em;
+    margin-bottom: 2em;
+    
+    border-radius: 1em;
+}
+
+#gaussImg-2 {
+    width: 38em;
+    height: 32em;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 2em;
+}
+
+#last-paragraph {
+    border-bottom: none;
+}
+
+#curiosities-container {
+    margin-left: .5em;
+    margin-right: 25%;
+}
+
+#main-phrase-quote-2 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.5em;
+
+    text-align: center;
+    
+    margin-right: 1em;
+}
+
+.gauss-portrait {
+    float: left;
+
+    width: 4.5em;
+    height: 5em;
+
+    border-radius: .2em;
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-right: 2em;
+}
+
+.sub-main-phrase-quote {
+    font-family: "Times New Roman", Times, serif;
+    font-size: .8em;
+
+    position: relative;
+    right: .9em;
+    bottom: .5em;
+}
+
+.sub-image-content {
+    font-size: 1em;
+    text-align: center;
+}
+
+.text-content {
+    font-size: 1.5em;
+}
+
+.biography-container {
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+
+    margin-right: 2em;
+    
+    text-align: justify;
+}
+
+.quote-container {
+    font-size: 2em;
+    border: .1em groove white;
+
+    width: 35em;
+    height: 7em;
+
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.quote-container blockquote {
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    padding-top: .4em;
+    
+    margin-right: 1em;
+}
+
+.arial-font {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.spacing-borders {
+    border-top: .1em dashed lightgray;
+    border-bottom: .1em dashed lightgray;
+
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.div-align-center {
+    text-align: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bold {
+    font-weight: bold;
+}

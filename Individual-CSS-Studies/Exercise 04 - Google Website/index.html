@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google</title>
+    <link rel="icon" href="img/favicon.ico">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    <header>
+        <nav class="navinfo">
+            <a class="title-link"
+                href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=Ab5oB3rUYdwkVXpndWIP5_PBHJ7rjkAAPiOs172UAf_oymjFo9K3cfmr6PiQHT3F_PMsoBx8WSWJ&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S50800229%3A1724000084227532&ddm=0"
+                target="_blank">Gmail</a>
+            <a class="title-link" href="https://images.google.com/" target="_blank">Images</a>
+            <abbr title="Search Labs">
+                <i class="fa fa-flask" aria-hidden="true" id="flask-icon"></i>
+            </abbr>
+            <a class="title-link"
+                href="https://accounts.google.com/v3/signin/identifier?hl=pt-br&ifkv=Ab5oB3r70ugoHzRNmfRp0FAuy3ta6kz9Y4cZJ22asUULlVi6b2aPbUKHMXrlOOGhTMbO3WD5rEERfg&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-703416394%3A1723999846630499&ddm=0"
+                target="_blank">
+                Login
+            </a>
+            <img src="img/default-user.jpg" alt="" id="user-profile-picture">
+        </nav>
+    </header>
+
+    <main class="search-container">
+
+        <img src="img/google-white-logo-2.png" alt="" id="google-logo">
+
+        <form id="search-bar-container">
+            <div class="search-bar" onclick="focusInput()">
+                <i class="fa fa-search search-bar-icons" aria-hidden="true" id="search-icon"></i>
+                <input type="text" id="textInput">
+                <i class="fa fa-microphone search-bar-icons" aria-hidden="true" id="microphone-icon"></i>
+                <i class="fa fa-camera search-bar-icons" aria-hidden="true" id="camera-icon"></i>
+            </div>
+
+            <button type="submit" class="search-button">Google Search</button>
+            <button class="search-button">I'm Feeling Lucky</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-options">
+            <p>Brazil</p>
+        </div>
+        <div class="footer-options">
+            <div class="left-items">
+                <a href="https://about.google/?utm_source=google-BR&utm_medium=referral&utm_campaign=hp-footer&fg=1" target="_blank">About</a>
+                <a href="https://ads.google.com/intl/en_br/home/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1" target="_blank">Advertising</a>
+                <a href="https://smallbusiness.withgoogle.com/intl/pt-BR_br/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google&utm_medium=ep&utm_campaign=google_hpbfooter&utm_content=google_hpbfooter&gmbsrc=ww-ww-et-gs-z-gmb-s-z-u~sb-g4sb_srvcs-u&c=BR#!/" target="_blank">Business</a>
+                <a href="https://www.google.com/search/howsearchworks/?fg=1" target="_blank">How Search Works</a>
+            </div>
+
+            <div class="right-items">
+                <a href="https://policies.google.com/privacy?hl=en-BR&fg=1" target="_blank">Privacy</a>
+                <a href="https://policies.google.com/terms?hl=en-BR&fg=1" target="_blank">Terms</a>
+                <a href="https://www.google.com/preferences?hl=en-US&fg=1" target="_blank">Settings</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function focusInput() {
+            document.getElementById('textInput').focus();
+        }
+    </script>
+</body>
+</html>

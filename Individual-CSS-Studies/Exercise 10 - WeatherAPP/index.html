@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <main class="container">
+        <form class="weatherForm" onsubmit="return getFormData(event)" autocomplete="off">
+            <input class="weather-location-input" type="text" name="location" placeholder="Enter City Name" onkeydown="return /[a-z ]/i.test(event.key)" minlength="1" maxlength="100" required>
+            <button type="submit">get weather</button>
+        </form>
+
+        <div class="weather-itens-box">
+            <img src="img/sun-icon.png" alt="sun-icon-png" class="sun-icon">
+
+            <div class="weather-info-container">
+                <p class="weather-data">Miami</p>
+                <p class="weather-data">45°F / 7.3°C</p>
+                <p class="weather-data">Humidity: 63%</p>
+                <p class="weather-data">overcast clouds</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

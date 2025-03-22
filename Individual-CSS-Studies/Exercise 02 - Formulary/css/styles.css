@@ -1,0 +1,323 @@
+/* Hiding side arrows from number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type=file] {
+    display: none;
+}
+
+textarea {
+    resize: none;
+}
+
+select option[value="select-placeholder"] {
+    display: none;
+}
+
+@font-face {
+    font-family: 'Bubbleboddy';
+    src: url('../fonts/Bubbleboddy-FatTrial.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    /* Reset */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-image: url("../images/fish-background.gif");
+    background-size: cover;
+    user-select: none;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #333;
+}
+
+p, label {
+    color: #444;
+}
+
+/* -------------- */
+
+a {
+    color: #000;
+}
+
+h1 {
+    font-family: "Bubbleboddy", sans-serif;
+}
+
+#wave-img {
+    height: auto;
+    width: 100% ;
+}
+
+#birth-date-calendar {
+    width: 30vh;
+    height: 5vh;
+    font-size: 3vh;
+}
+
+.submit-button {
+    text-align: center;
+}
+
+.submit-button input {
+    margin: 4vh 0vh;
+    cursor: pointer;
+    font-size: 3.5vh;
+
+    border-radius: 1vh;
+
+    transition: all 0.4s ease-in-out 0s;
+
+    width: 30vh;
+    height: 6vh;
+
+    border: .1vh solid transparent;
+    text-transform: uppercase;
+
+    color: lightblue;
+    background-color: #1D2B53;
+}
+
+.submit-button-sign-in {
+    position: relative;
+    left: 2vh;
+    top: 2vh;
+}
+
+.submit-button-sign-in input {
+    margin: 4vh 0vh;
+    cursor: pointer;
+    font-size: 3.5vh;
+    
+    border-radius: 1vh;
+    
+    transition: all 0.4s ease-in-out 0s;
+    
+    width: 30vh;
+    height: 6vh;
+    
+    border: .1vh solid transparent;
+    text-transform: uppercase;
+    
+    color: lightblue;
+    background-color: #1D2B53;
+}
+
+.submit-button-sign-in input:hover {
+    width: 40vh;
+    background-color: #FFF;
+    color: #1D2B53;
+    border-color: #1D2B53;
+}
+
+.submit-button input:hover {
+    width: 40vh;
+    background-color: #FFF;
+    color: #1D2B53;
+    border-color: #1D2B53;
+}
+
+.profile-picture-input {
+    padding: 1.5vh 3vh;
+    
+    cursor: pointer;
+    color: lightblue;
+    background-color: #1D2B53;
+    border: 2px solid #FFF;
+    border-radius: 1vh;
+}
+
+.header {
+    background-color: rgb(52, 75, 142);
+    background-image: url("../images/bubbles.gif");
+
+    box-shadow: 1vh 0 40px -5px black;
+    
+    background-size: cover;
+    width: 100%;
+    height: 20vh;
+}
+
+.container {
+    width: 60%;
+
+    border-radius: 5%;
+    
+    position: relative;
+    top: -10vh;
+
+    background-color: white;
+}
+
+.title-container {
+    padding-top: 5vh;
+    text-align: center;
+}
+
+.from-header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 4vh;
+
+    border-top-right-radius: 20%;
+    border-top-left-radius: 20%;
+
+    -moz-box-shadow: 0 4px 120px -px #222;
+    box-shadow: 0 4px 4px -5px #222;
+
+    padding-top: 2vh;
+}
+
+.sign-in {
+    margin: 0 1vh;
+    display: inline-block;
+}
+
+.sign-up {
+    margin: 0 1vh;
+    display: inline-block;
+}
+
+.center-div {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.register-container {
+    padding-left: 6vh;
+    padding-top: 5vh;
+    font-size: 3vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sign-in-container {
+    font-size: 3vh;
+
+    text-align: center;
+    
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-field {
+    padding-top: 1.5vh;
+    padding-left: 5vh;
+}
+
+.input-field textarea {
+    width: 40vh;
+    height: 25vh;
+
+    margin-top: 15px;
+}
+
+.input-field p {
+    margin: 0 0;
+}
+
+.input-field h3 {
+    margin-top: 1.5vh;
+}
+
+.input-field input {
+    width: 40vh;
+    border: none;
+
+    border-bottom: .3vh solid #DDD;
+}
+
+.birth-date-container {
+    margin: 0 0;
+}
+
+.option-select {
+    margin: 0 1vh;
+    margin-left: 3.5vh;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.water-type {
+    padding-left: 5vh;
+}
+
+.radio-margin {
+    margin: 0 2vh;
+}
+
+.optionals-container {
+    padding-left: 2vh;
+        
+    margin-bottom: 2vh;
+}
+
+#optionals-h2 {
+    font-size: 3.7vh;
+    padding-top: 1.5vh;
+    padding-left: 5vh;
+        
+    margin: 0 0;
+    margin-top: 3vh;
+}
+
+#biography-h3 {
+    margin: 0 0;
+    margin-top: 4vh;
+}
+
+#profile-picture-input {
+    background-color: #1D2B53;
+}
+
+.optionals-container ul {
+    list-style-type: none;
+}
+
+.option-select select {
+    position: relative;
+    bottom: .5vh;
+
+    color: lightblue;
+        
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.675em 6em 0.675em 1em;
+    background-color: #1D2B53;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+}
+
+.underline-login {
+    color: rgb(52, 75, 142);
+    padding-bottom: 1vh;
+    border-bottom: .1vh solid rgb(52, 75, 142);
+}
+
+.div-align-center {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Contact Website</title>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maxmum-scale=1.0, user-scalable=no">
+</head>
+<body>
+    <main class="container">
+        <!-- Left Side Banner -->
+        <div id="info-container-background">
+            <div id="info-container-background-fade">
+                <div id="adress" class="info">
+                    <h2><ion-icon name="navigate" id="navigate-icon"></ion-icon> Address</h2>
+                    <p>Unknown Street, 133</p>
+                </div>
+                <div id="number" class="info">
+                    <h2><ion-icon name="call"></ion-icon> Number</h2>
+                    <p>(48) 9999-2020</p>
+                </div>
+                <div id="Email" class="info">
+                    <h2><ion-icon name="mail"></ion-icon> Email</h2>
+                    <p>sample-email@email.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side Banner -->
+        <div id="contact-form-container">
+            <form id="contact-form">
+
+                <p>Send Us a Message!</p>
+
+                <label for="name">Name:</label>
+                <input type="text" name="name" placeholder="Type Your Full Name" minlength="5" maxlength="30" required>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="Type Your Email" minlength="7" maxlength="50" required>
+
+                <label for="number">Number:</label>
+                <input type="number" name="number" placeholder="Type Your Number" minlength="10" maxlength="15" required>
+
+                <label for="message">Your Message:</label>
+                <textarea name="message" placeholder="How We Can Help You?"></textarea>
+
+                <button type="submit" id="submit-button">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+</html>
