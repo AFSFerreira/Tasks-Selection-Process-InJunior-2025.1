@@ -1,0 +1,131 @@
+.auth-login-field {
+    width: 100%;
+    height: 80%;
+    min-height: 60px;
+    max-height: 170px;
+}
+
+.auth-login-form {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+    gap: 20px;
+}
+
+.login-info-container {
+    width: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+.login-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-title > span {
+    font-size: 1.5rem;
+    color: rgba(9, 9, 55, 0.6);
+    font-weight: 600;
+}
+
+.login-title > p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #090937;
+}
+
+.site-logo {
+    align-self: center;
+}
+
+.buttons-box {
+    margin-top: 70px;
+}
+
+.buttons-box > button {
+    width: 100%;
+    min-height: clamp(60px, 20%, 90px);
+    font-weight: 600;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.7s;
+}
+
+.buttons-box > button:first-of-type {
+    background-color: #EF6B4A;
+    border: 1px solid #EF6B4A;
+    color: #FFF;
+
+    &:hover {
+        background-color: #FFF;
+        color: #EF6B4A;
+    }
+}
+
+.buttons-box > button:last-of-type {
+    background-color: #FFF;
+    border: 1px solid #6251DD;
+    color: #6251DD;
+
+    &:hover {
+        background-color: #6251DD;
+        color: #FFF;
+    }
+}
+
+.buttons-box {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.auth-login-form > span {
+    font-size: 1.25rem;
+    color: rgba(255, 0, 0, 0.55);
+}
+
+.login-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.login-section > div {
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .login-title > p,
+    .login-title > span {
+        text-align: center;
+    }
+
+    .login-info-container {
+        gap: 0;
+    }
+
+    .login-info-container {
+        margin-top: 120px;
+    }
+
+    .buttons-box {
+        margin-bottom: 90px;
+    }
+}
