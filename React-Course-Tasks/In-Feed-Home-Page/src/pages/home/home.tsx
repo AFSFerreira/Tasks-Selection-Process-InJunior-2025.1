@@ -41,7 +41,7 @@ export default function InFeed() {
     return (<p>Error while loading user</p>);
   }
 
-  const { user, setUser } = userContext;
+  const { setUser } = userContext;
 
   useEffect(() => {
     setUser(loggedUser);
@@ -56,7 +56,7 @@ export default function InFeed() {
       <main>
         <div className={styles['profile-cards-container']}>
           <ProfileCard
-            user={user}
+            user={loggedUser}
           />
           
           <ProfileCard

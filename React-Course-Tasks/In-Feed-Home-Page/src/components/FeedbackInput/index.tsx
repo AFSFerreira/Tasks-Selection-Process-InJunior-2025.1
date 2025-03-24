@@ -18,16 +18,16 @@ export default function FeedbackInput() {
   const [inputValue, setInputValue] = useState<string>('');
   const [hideOnce, setHideOnce] = useState<boolean>(true);
   
-  const { addFeedback } = feedbacksContext;
-  const { user } = userContext;
-
   if (!userContext) {
     return (<p>Error while loading user</p>);
   }
-
+  
   if (!feedbacksContext) {
     return (<p>Error while loading feedbacks</p>);
   }
+  
+  const { addFeedback } = feedbacksContext;
+  const { user } = userContext;
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -76,7 +76,8 @@ export default function FeedbackInput() {
             className={`${shouldShowButton ? styles['show-button'] : styles['hide-button']} ${isSubmitDisabled && styles['disabled-submit']}`}
             type="submit"
             style={hideOnce ? {
-              display: 'none'
+              opacity: '0',
+              animation: 'none'
             } : {}}
             disabled={isSubmitDisabled}
           >

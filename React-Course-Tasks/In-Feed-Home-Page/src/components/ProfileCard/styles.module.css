@@ -92,7 +92,7 @@
     transform: translateX(-50%);
 
     &:hover {
-        animation: customProfilePicAnim .5s ease-in-out forwards !important;
+        animation: customProfilePicAnim .2s ease-in-out forwards !important;
     }
 }
 
