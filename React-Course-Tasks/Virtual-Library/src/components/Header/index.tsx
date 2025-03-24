@@ -17,7 +17,6 @@ export default function Header() {
           <ul>
             <li>
               <Link
-                id="login-link"
                 to="/login"
                 className={styles['nav-link']}
               >
