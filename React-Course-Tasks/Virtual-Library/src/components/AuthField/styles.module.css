@@ -1,0 +1,33 @@
+
+.auth-field-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.auth-field-box > label {
+    font-size: 1.25rem;
+    color: #090937;
+    font-weight: 600;
+}
+
+.auth-field-box > input {
+    width: 100%;
+    height: 50%;
+    border: none;
+    background-color: #F4F4FF;
+    border-radius: 8px;
+}
+
+.auth-field-box > input,
+.auth-field-box > input {
+    padding-left: 16px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.auth-field-box > input::placeholder {
+    color: rgba(9, 9, 55, 0.4);
+}

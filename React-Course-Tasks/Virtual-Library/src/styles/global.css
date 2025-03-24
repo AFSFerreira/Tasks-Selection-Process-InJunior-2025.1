@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', 'Arial', 'sans-serif';
+}
+
+html {
+    width: 100dvw;   
+}
+
+body {
+    width: 100%;
+    overflow-y: auto;
+}

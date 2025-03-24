@@ -1,0 +1,100 @@
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.header-container {
+    width: 100dvw;
+    height: 10dvh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-icons-box {
+    width: 10%;
+    height: 100%;
+}
+
+.nav-icons-box > ul {
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+}
+
+.nav-icons-box > ul > li {
+    height: 100%;
+    list-style: none;
+}
+
+.nav-link {
+    position: relative;
+    background-color: #F4F4FF;
+    cursor: pointer;
+    aspect-ratio: 1 / 1;
+    height: 80%;
+    border-radius: 8px;
+    transition: all 1s ease-in-out;
+
+    &::before {
+        content: "";
+        position: absolute;
+        border-radius: 10px;
+        top: 0;
+        left: 0;
+        width: 10%;
+        height: 10%;
+
+        transform: translateX(45%) translateY(45%);
+        
+        background: conic-gradient(from var(--angle),
+            #001f3f,
+            #0074D9,
+            #7FDBFF,
+            #001f3f
+        );
+        
+        /* will-change: width, height, transform; */
+        transition: all 0.25s cubic-bezier(0.9, 0, 0.3, 1);
+        animation: rotate-gradient 3s both infinite;
+        z-index: -1;
+    }
+            
+    &:hover::before {
+        transform: translateX(-2.5%) translateY(-2.5%);
+        width: 105%;
+        height: 105%;
+    }
+}
+
+.header-logo > div {
+    margin-left: 60px;
+}
+
+.header-logo > div > svg {
+    width: auto;
+    height: 5dvh;
+}
+
+
+.nav-link,
+.nav-icons-box,
+.nav-icons-box > ul,
+.nav-icons-box > ul > li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes rotate-gradient {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
