@@ -47,7 +47,7 @@
         width: 10%;
         height: 10%;
 
-        transform: translateX(45%) translateY(45%);
+        transform: translate(45%, 45%);
         
         background: conic-gradient(from var(--angle),
             #001f3f,
@@ -63,7 +63,7 @@
     }
             
     &:hover::before {
-        transform: translateX(-2.5%) translateY(-2.5%);
+        transform: translate(-2.5%, -2.5%);
         width: 105%;
         height: 105%;
     }
