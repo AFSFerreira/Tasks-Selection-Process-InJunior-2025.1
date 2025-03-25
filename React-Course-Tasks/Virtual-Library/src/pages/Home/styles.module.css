@@ -7,7 +7,7 @@
 
 .home-page-banner-box {
     width: 100%;
-    height: 40dvh;
+    height: clamp(500px, 40dvh, 700px);
     position: relative;
     border-radius: 8px;
     overflow: hidden;
@@ -73,4 +73,30 @@
 .banner-title > p {
     color: #FFF;
     line-height: 150%;
+}
+
+@media (max-width: 600px) {
+    .banner-title > p,
+    .banner-title > p > div {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .home-page-banner-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner-title {
+        margin: 0;
+        width: 90%;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 1600px) {
+    .banner-title {
+        width: 50%;
+    }
 }

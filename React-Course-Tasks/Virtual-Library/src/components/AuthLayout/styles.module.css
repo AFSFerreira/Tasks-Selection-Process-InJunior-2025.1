@@ -26,7 +26,7 @@
     width: 110%;
     object-fit: cover;
     will-change: transform, filter;
-    animation: coverParallax 12s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+    animation: coverParallax 6s ease-in-out both infinite alternate;
 }
 
 .auth-form-box {
@@ -41,19 +41,14 @@
 }
 
 @keyframes coverParallax {
-    0% {
+    from {
         transform: translateX(0) scale(1);
         filter: contrast(1) brightness(1);
     }
 
-    50% {
+    to {
         transform: translateX(-2.5%) scale(1.02);
         filter: contrast(1.1) brightness(0.92);
-    }
-
-    100% {
-        transform: translateX(0) scale(1);
-        filter: contrast(1) brightness(1);
     }
 }
 
@@ -72,7 +67,6 @@
     }
 
     .auth-form-box {
-        margin-top: 30px;
         width: 70%;
     }
 

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import useBookStore from "../../stores/BookStore";
 import styles from "./styles.module.css";
 import homeBanner from "../../assets/homeBanner.png";
+import BookCard from "../../components/BookCard";
 
 export default function Home() {
   const {
@@ -26,9 +27,11 @@ export default function Home() {
       <main className={styles["home-page-container"]}>
         <div className={styles["home-page-banner-box"]}>
           <div className={styles["banner-title"]}>
-            <p><div>25% de desconto</div> nos livros do Paulo Coelho!</p>
+            <p>
+              <div>25% de desconto</div> nos livros do Paulo Coelho!
+            </p>
           </div>
-          <div className={styles['img-box']}>
+          <div className={styles["img-box"]}>
             <img
               draggable={false}
               src={homeBanner}
@@ -37,7 +40,9 @@ export default function Home() {
             />
           </div>
         </div>
-
+        <BookCard
+          {...allBooksAvailable[1]}
+         />
         {/* {Array.from(booksBycategory.keys()).map((category) => (
           <p>{category}</p>
         ))} */}

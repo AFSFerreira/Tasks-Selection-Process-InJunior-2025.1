@@ -1,16 +1,16 @@
-import { ReactSVG } from 'react-svg';
-import { LogoProps } from '../../@types/logo-props';
-import libraryLogo from '../../assets/Logo.svg';
-import styles from './styles.module.css';
+import { ReactSVG } from "react-svg";
+import LogoProps from "../../@types/logo-props";
+import libraryLogo from "../../assets/Logo.svg";
+import styles from "./styles.module.css";
 
 export default function Logo(props: LogoProps) {
   return (
     <>
       <ReactSVG
-      {...props}
-      draggable={false}
-      src={libraryLogo}
-      className={`${styles['logo-img']} ${props.className}`}
+        {...props}
+        draggable={false}
+        src={libraryLogo} 
+        className={`${styles["logo-img"]} ${props.className}`}
       />
     </>
   );
