@@ -1,100 +1,126 @@
 @property --angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
 .header-container {
-    width: 100dvw;
-    height: 10dvh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  height: 10dvh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-icons-box {
-    width: 10%;
-    height: 100%;
+  height: 100%;
+  margin-right: 5%;
 }
 
 .nav-icons-box > ul {
-    width: 100%;
-    height: 100%;
-    gap: 10px;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
 }
 
 .nav-icons-box > ul > li {
-    height: 100%;
-    list-style: none;
+  height: 100%;
+  list-style: none;
 }
 
 .nav-link {
-    position: relative;
-    background-color: #F4F4FF;
-    cursor: pointer;
-    aspect-ratio: 1 / 1;
-    height: 80%;
-    border-radius: 8px;
-    transition: all 1s ease-in-out;
+  position: relative;
+  color: #000;
+  background-color: #f4f4ff;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+  height: 80%;
+  border-radius: 8px;
+  transition: all 1s ease-in-out;
 
-    &::before {
-        content: "";
-        position: absolute;
-        border-radius: 10px;
-        top: 0;
-        left: 0;
-        width: 10%;
-        height: 10%;
+  &:hover {
+    animation: iconColorChange 2s ease-in-out infinite;
+  }
 
-        transform: translate(45%, 45%);
-        
-        background: conic-gradient(from var(--angle),
-            #001f3f,
-            #0074D9,
-            #7FDBFF,
-            #001f3f
-        );
-        
-        /* will-change: width, height, transform; */
-        transition: all 0.25s cubic-bezier(0.9, 0, 0.3, 1);
-        animation: rotate-gradient 3s both infinite;
-        z-index: -1;
-    }
-            
-    &:hover::before {
-        transform: translate(-2.5%, -2.5%);
-        width: 105%;
-        height: 105%;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 10%;
+
+    transform: translate(30%, 30%);
+
+    background: conic-gradient(
+      from var(--angle),
+      #001f3f,
+      #0074d9,
+      #7fdbff,
+      #001f3f
+    );
+
+    /* will-change: width, height, transform; */
+    transition: all 0.25s ease-in-out;
+    animation: rotate-gradient 3s both infinite;
+    z-index: -1;
+  }
+
+  &:hover::before {
+    transform: translate(-2.5%, -2.5%);
+    width: 105%;
+    height: 105%;
+  }
 }
 
-.header-logo > div {
-    margin-left: 60px;
+.header-container > a {
+  margin-left: 5%;
 }
 
 .header-logo > div > svg {
-    width: auto;
-    height: 5dvh;
+  width: auto;
+  height: 7dvh;
 }
-
 
 .nav-link,
 .nav-icons-box,
 .nav-icons-box > ul,
 .nav-icons-box > ul > li {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes rotate-gradient {
-    from {
-        --angle: 0deg;
-    }
+  from {
+    --angle: 0deg;
+  }
 
-    to {
-        --angle: 360deg;
-    }
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes iconColorChange {
+  0% {
+    color: #000;
+  }
+  20% {
+    color: #001f3f;
+  }
+  40% {
+    color: #0074d9;
+  }
+  60% {
+    color: #7fdbff;
+  }
+  80% {
+    color: #001f3f;
+  }
+  100% {
+    color: #000;
+  }
 }

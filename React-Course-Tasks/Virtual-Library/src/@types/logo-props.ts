@@ -1,5 +1,5 @@
-export type LogoProps = {
-    className?: string;
+type LogoProps = {
+  className?: string;
 };
 
-
+export default LogoProps;

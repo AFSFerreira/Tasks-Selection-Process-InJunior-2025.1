@@ -1,6 +1,8 @@
 import React from "react";
 
-export type AuthFieldProps = {
-    fieldName: string;
-    fieldType: React.HTMLInputTypeAttribute;
+type AuthFieldProps = {
+  fieldName: string;
+  fieldType: React.HTMLInputTypeAttribute;
 } & React.InputHTMLAttributes<HTMLInputElement>;
+
+export default AuthFieldProps;
