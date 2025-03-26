@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import useBookStore from "../../stores/BookStore";
 import styles from "./styles.module.css";
 import homeBanner from "../../assets/homeBanner.png";
-import BookCard from "../../components/BookCard";
+import BooksCategorySection from "../../components/BooksCategorySection";
 
 export default function Home() {
   const {
@@ -40,9 +40,15 @@ export default function Home() {
             />
           </div>
         </div>
-        <BookCard
-          {...allBooksAvailable[1]}
-         />
+        {booksBycategory.get("Best-sellers") && <BooksCategorySection
+          booksCategory="Best-sellers"
+          books={[
+            booksBycategory.get("Best-sellers")![0],
+            booksBycategory.get("Best-sellers")![1],
+            booksBycategory.get("Best-sellers")![2],
+            booksBycategory.get("Best-sellers")![3],
+          ]}
+        />}
         {/* {Array.from(booksBycategory.keys()).map((category) => (
           <p>{category}</p>
         ))} */}

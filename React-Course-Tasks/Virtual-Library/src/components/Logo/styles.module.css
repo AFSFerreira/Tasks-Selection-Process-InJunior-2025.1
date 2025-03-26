@@ -2,4 +2,27 @@
     max-width: 100%;
     text-align: center;
     height: auto;
+    color: #6251DD;
+    /* animation: logoColorChange 2s ease-in-out infinite; */
 }
+
+.logo-img > div {
+    animation: logoColorChange 1s ease-in-out infinite paused;
+}
+
+.logo-img:hover > div {
+    animation-play-state: running;
+}
+
+@keyframes logoColorChange {
+  0% {
+    color: #6251DD;
+  }
+  50% {
+    color: #0074d9;
+  }
+  100% {
+    color: #6251DD;
+  }
+}
+

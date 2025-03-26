@@ -28,7 +28,7 @@ export default function BookCard(props: BookCardProps) {
               <p>{props.autor}</p>
             </div>
 
-            <p>R${props.preco}</p>
+            <p>R${Number(props.preco).toFixed(2)}</p>
           </div>
         </div>
       </div>

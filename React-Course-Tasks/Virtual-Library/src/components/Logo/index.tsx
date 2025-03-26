@@ -9,8 +9,14 @@ export default function Logo(props: LogoProps) {
       <ReactSVG
         {...props}
         draggable={false}
-        src={libraryLogo} 
+        src={libraryLogo}
         className={`${styles["logo-img"]} ${props.className}`}
+        beforeInjection={(svg) => {
+          svg.querySelectorAll("path").forEach((path) => {
+            path.setAttribute("stroke", "currentColor");
+            path.setAttribute("fill", "currentColor");
+          });
+        }}
       />
     </>
   );
