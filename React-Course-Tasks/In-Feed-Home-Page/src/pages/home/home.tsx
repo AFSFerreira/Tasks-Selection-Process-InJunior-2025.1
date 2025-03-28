@@ -33,6 +33,10 @@ export default function InFeed() {
   const postsContext = useContext(PostContext);
   const userContext = useContext(UserContext);
 
+  useEffect(() => {
+    setUser(loggedUser);
+  }, []);
+
   if (!postsContext) {
     return (<p>Error while loading posts</p>);
   }
@@ -42,11 +46,6 @@ export default function InFeed() {
   }
 
   const { setUser } = userContext;
-
-  useEffect(() => {
-    setUser(loggedUser);
-  }, []);
-
   const { posts } = postsContext;
 
   return (

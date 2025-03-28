@@ -3,15 +3,10 @@
     text-align: center;
     height: auto;
     color: #6251DD;
-    /* animation: logoColorChange 2s ease-in-out infinite; */
-}
-
-.logo-img > div {
-    animation: logoColorChange 1s ease-in-out infinite paused;
-}
-
-.logo-img:hover > div {
-    animation-play-state: running;
+    
+    &:hover {
+        animation: logoColorChange 1s ease-in-out infinite;
+    }
 }
 
 @keyframes logoColorChange {

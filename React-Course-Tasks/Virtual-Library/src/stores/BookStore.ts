@@ -25,12 +25,17 @@ const useBookStore = create<BookStore>((set, get) => ({
       set(() => ({
         allBooksAvailable: response.data,
       }));
+
     } catch (error) {
       console.error("Erro ao carregar livros:", error);
     }
   },
 
-  filterBooksByCategory: () => {
+  filterBooksByCategory: async () => {
+    const { fetchAllBooks } = get();
+
+    await fetchAllBooks();
+
     const { allBooksAvailable, booksBycategory } = get();
 
     const updatedBooksByCategory = new Map(booksBycategory);

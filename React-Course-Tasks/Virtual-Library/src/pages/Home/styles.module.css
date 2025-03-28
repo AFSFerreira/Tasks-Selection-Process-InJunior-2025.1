@@ -1,3 +1,9 @@
+@property --lin-grad-perc {
+    syntax: '<percentage>';
+    inherits: true;
+    initial-value: 20%;
+}
+
 .home-page-container {
     width: 90%;
     margin-top: 40px;
@@ -34,6 +40,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    transition: all 1s ease-in-out;
     
     &::before {
         content: "";
@@ -41,18 +48,17 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to right, rgba(9, 9, 55, 0.8) 20%, rgba(29, 29, 78, 0.4));
-        transform: scale(2);
-        transition: all 1s ease-in-out;
+        background: linear-gradient(to right, rgba(9, 9, 55, 0.8) var(--lin-grad-perc), rgba(29, 29, 78, 0.4));
+        transition: --lin-grad-perc 1s ease-in-out;
     }
     
     &:hover::before {
-        transform: scale(1);
+        --lin-grad-perc: 40%;
     }
 }
 
 .banner-title:hover ~ .img-box::before {
-    transform: scale(1);
+    --lin-grad-perc: 40%;
 }
 
 .banner-title {
@@ -67,36 +73,26 @@
     z-index: 2;
 }
 
-.banner-title > p,
-.banner-title > p > div {
+.banner-title > div,
+.banner-title > div > div {
     width: 100%;
     font-size: 3.5rem;
     font-weight: 600;
 }
 
-.banner-title > p > div {
+.banner-title > div > div {
     width: 100%;
     color: rgba(240, 184, 97, 1);
 }
 
-.banner-title > p {
+.banner-title > div {
     color: #FFF;
     line-height: 150%;
 }
 
-@keyframes bannerBackgroundLinearGradientTransition {
-    from {
-        background: linear-gradient(to right, rgba(9, 9, 55, 0.7), rgba(29, 29, 78, 0.2));
-    }
-    
-    to {
-        background: linear-gradient(to right, rgba(9, 9, 55, 0.9), rgba(29, 29, 78, 0.4));
-    }
-}
-
 @media (max-width: 600px) {
-    .banner-title > p,
-    .banner-title > p > div {
+    .banner-title > div,
+    .banner-title > div > div {
         text-align: center;
     }
 
