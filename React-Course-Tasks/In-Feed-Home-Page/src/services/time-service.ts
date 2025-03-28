@@ -7,7 +7,7 @@ export default function getRelativeTime(date: Date, message?: string): string {
     do {
         const seconds = differenceInSeconds(now, date);
         if (seconds < 60) {
-            elapsedTime = `${seconds}s`;
+            elapsedTime = `instantes`;
             break;
         };
     
