@@ -1,0 +1,127 @@
+@property --lin-grad-perc {
+    syntax: '<percentage>';
+    inherits: true;
+    initial-value: 20%;
+}
+
+.home-page-banner-box {
+    width: 100%;
+    height: clamp(500px, 40dvh, 700px);
+    position: relative;
+    margin-bottom: 92px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid rgba(9, 9, 55, 0.2);
+}
+
+.home-banner-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-position: 0% var(--scroll-Y-perc);
+    object-fit: cover;
+    z-index: -1;
+}
+
+.img-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1s ease-in-out;
+    
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(9, 9, 55, 0.8) var(--lin-grad-perc), rgba(29, 29, 78, 0.4));
+        transition: --lin-grad-perc 1s ease-in-out;
+    }
+    
+    &:hover::before {
+        --lin-grad-perc: 40%;
+    }
+}
+
+.banner-title:hover ~ .img-box::before {
+    --lin-grad-perc: 40%;
+}
+
+.banner-title {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    margin-left: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 2;
+}
+
+.banner-title > div,
+.banner-title > div > div {
+    width: 100%;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+.banner-title > div > div {
+    width: max-content;
+    color: rgba(240, 184, 97, 1);
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 0%;
+        bottom: 0;
+        left: 0;
+        height: 5%;
+        background-color: rgba(240, 184, 97, 1);
+
+        transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    &:hover::before {
+        transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+        width: 100%;
+    }
+}
+
+.banner-title > div {
+    color: #FFF;
+    line-height: 150%;
+}
+
+@media (max-width: 600px) {
+    .banner-title > div,
+    .banner-title > div > div {
+        text-align: center;
+    }
+
+    .home-page-banner-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .banner-title {
+        margin: 0;
+        width: 90%;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 1600px) {
+    .banner-title {
+        width: 50%;
+    }
+}

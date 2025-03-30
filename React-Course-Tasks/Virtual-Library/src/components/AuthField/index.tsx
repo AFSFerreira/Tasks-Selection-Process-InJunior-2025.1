@@ -1,4 +1,5 @@
-import { AuthFieldProps } from '../../@types/auth-field-props';
+
+import AuthFieldProps from '../../@types/auth-field-props';
 import styles from './styles.module.css';
 
 export default function AuthField({ fieldName, fieldType, ...rest }: AuthFieldProps) {

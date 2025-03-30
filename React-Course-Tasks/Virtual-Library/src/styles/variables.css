@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 :root {
+    --books-category-container-gap: 20px;
     --min-book-card-width: 320px;
     --max-book-card-width: 520px;
+    --min-book-card-height: 200px;
+    --book-card-gap: 20px;
+    --scroll-Y-perc: 70%;
 }

@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 export default function BookCard(props: BookCardProps) {
   return (
     <>
-      <div className={styles["book-content-container"]}>
+      <div className={`${styles["book-content-container"]} ${props.className}`}>
         <div className={styles["book-hover-background-box"]}>
           <img
             draggable={false}

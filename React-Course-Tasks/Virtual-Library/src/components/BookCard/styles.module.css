@@ -2,11 +2,12 @@
     position: relative;
     min-width: var(--min-book-card-width);
     max-width: var(--max-book-card-width);
+    min-height: var(--min-book-card-height);
     border-radius: 4px;
     border: 2px solid rgba(9, 9, 55);
     background-color: #F4F4FF;
     z-index: 3;
-
+    transition: all 0.5s ease-in-out;
 }
 
 .book-content-box {
@@ -27,6 +28,7 @@
     transition: all 1s ease-in-out;
     
     &:hover {
+        box-shadow: inset 0px 0px 50px 8px #000;
         background-color: rgba(0, 0, 0, 0.7);
     }
 }
@@ -77,17 +79,25 @@
 
 .book-title-box {
     display: flex;
+    max-height: 80%;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 8px;
 }
 
 .book-title-box > p:first-of-type {
     font-weight: 800;
+    overflow-y: auto;
+    max-height: 80%;
+    line-height: initial;
     width: fit-content;
     font-size: 1.5rem;
     cursor: pointer;
+
+    /* Hide scroll bar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     transition: all 1s ease-in-out;
 }
@@ -113,6 +123,9 @@
     height: 100%;
     border-radius: 4px;
     overflow: hidden;
+    background-color: transparent;
+    position: absolute;
+    z-index: 1;
 }
 
 @keyframes pendulumBackAnim {

@@ -1,5 +1,7 @@
 import Book from "./book";
 
-type BookCardProps = {} & Book;
+type BookCardProps = {
+    className?: string;
+} & Book;
 
 export default BookCardProps;

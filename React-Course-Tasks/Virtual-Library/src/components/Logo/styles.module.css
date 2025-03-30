@@ -3,21 +3,6 @@
     text-align: center;
     height: auto;
     color: #6251DD;
-    
-    &:hover {
-        animation: logoColorChange 1s ease-in-out infinite;
-    }
 }
 
-@keyframes logoColorChange {
-  0% {
-    color: #6251DD;
-  }
-  50% {
-    color: #0074d9;
-  }
-  100% {
-    color: #6251DD;
-  }
-}
 

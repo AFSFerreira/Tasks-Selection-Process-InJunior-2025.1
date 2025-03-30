@@ -32,7 +32,7 @@
 .nav-link {
   position: relative;
   color: #000;
-  background-color: #f4f4ff;
+  background-color: #F4F4FF;
   cursor: pointer;
   aspect-ratio: 1 / 1;
   height: 80%;
@@ -56,10 +56,10 @@
 
     background: conic-gradient(
       from var(--angle),
-      #001f3f,
-      #0074d9,
-      #7fdbff,
-      #001f3f
+      #001F3F,
+      #0074D9,
+      #7FDBFF,
+      #001F3F
     );
 
     /* will-change: width, height, transform; */
@@ -75,12 +75,32 @@
   }
 }
 
-.header-container > a {
+.header-container > a,
+.header-logo-back > a {
   margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.header-logo-back {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
 
-.header-logo > div > svg {
+.header-logo-back-anim {
+  animation: logoColorChange 1s ease-in-out infinite;
+}
+
+.header-logo > div > svg,
+.header-logo-back > div > svg {
   width: auto;
   height: clamp(70px, 7dvh, 105px);
 }
@@ -109,19 +129,38 @@
   0% {
     color: #000;
   }
+
   20% {
-    color: #001f3f;
+    color: #001F3F;
   }
+
   40% {
-    color: #0074d9;
+    color: #0074D9;
   }
+
   60% {
-    color: #7fdbff;
+    color: #7FDBFF;
   }
+
   80% {
-    color: #001f3f;
+    color: #001F3F;
   }
+
   100% {
     color: #000;
+  }
+}
+
+@keyframes logoColorChange {
+  0% {
+    color: #6251DD;
+  }
+
+  50% {
+    color: #7FDBFF;
+  }
+
+  100% {
+    color: #6251DD;
   }
 }
