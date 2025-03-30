@@ -70,11 +70,7 @@ export default function BooksCategory(props: BooksCategoryProps) {
             const { top, bottom } = entry.boundingClientRect;
             const fromTop = bottom < window.innerHeight && top < 0;
 
-            if (fromTop) {
-              currentRef.classList.add(styles["show-from-bottom"]);
-            } else {
-              currentRef.classList.add(styles["show-from-top"]);
-            }
+            currentRef.classList.add(styles[fromTop ? "show-from-bottom" : "show-from-top"]);
           }
         });
       },
